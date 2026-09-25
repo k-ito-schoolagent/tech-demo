@@ -14,6 +14,20 @@
     <div><div class="eyebrow">INTERACTIVE SCIENCE LAB</div><h1>動かして、仕組みを知る。</h1></div>
     <p>機械と半導体を3Dで操作して学ぶ教材集です。<br>どのデモも、計算モデルとその前提を明示しています。</p>
   </section>
+  <section class="showcase" aria-label="デモの3Dショーケース">
+    <div class="show-stage">
+      <img id="show-poster" alt="">
+      <iframe id="show-frame" title="デモの3D表示" tabindex="-1"></iframe>
+    </div>
+    <div class="show-info" aria-live="polite">
+      <div class="eyebrow" id="show-meta"></div>
+      <h2 id="show-title"></h2>
+      <p id="show-summary"></p>
+      <a class="open" id="show-open">このデモを開く</a>
+      <div class="show-dots" id="show-dots" role="group" aria-label="ショーケースで見るデモを選ぶ"></div>
+      <p class="show-hint">3Dはドラッグで回せます。一覧のカードにマウスを乗せると、ここに表示されます。</p>
+    </div>
+  </section>
   <p class="count" id="count"></p>
   <div class="demo-list" id="demo-list"></div>
 

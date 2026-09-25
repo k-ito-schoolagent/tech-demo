@@ -8,7 +8,8 @@
     "summary": "燃焼が往復運動に、往復運動が回転に。点火順序1–5–3–6–2–4、24バルブ、カットモデルと分解表示。",
     "authors": [
       "@itoksk"
-    ]
+    ],
+    "thumb": "thumbs/engine.webp"
   },
   {
     "id": "cvt",
@@ -19,7 +20,8 @@
     "summary": "可動シーブで巻き付き半径を変え、ギアなしで変速する。ベルト長一定・周速一致を数値的に解くモデル。",
     "authors": [
       "@itoksk"
-    ]
+    ],
+    "thumb": "thumbs/cvt.webp"
   },
   {
     "id": "bjt",
@@ -30,7 +32,8 @@
     "summary": "小さなベース電流で、大きなコレクタ電流を。遮断・能動・飽和と、回路図・電流グラフの同期。",
     "authors": [
       "@itoksk"
-    ]
+    ],
+    "thumb": "thumbs/bjt.webp"
   },
   {
     "id": "mosfet",
@@ -41,7 +44,8 @@
     "summary": "ゲート電圧でチャネルをつくる。遮断・線形・飽和と、伝達特性・出力特性の同期グラフ。",
     "authors": [
       "@itoksk"
-    ]
+    ],
+    "thumb": "thumbs/mosfet.webp"
   },
   {
     "id": "pendulum",
@@ -52,6 +56,7 @@
     "summary": "振れ幅を変えると周期はどう変わる？ 楕円積分による厳密な周期と小角近似を比べる。新しいデモをつくるときの見本です。",
     "authors": [
       "@k-ito-schoolagent"
-    ]
+    ],
+    "thumb": "thumbs/pendulum.webp"
   }
 ]
