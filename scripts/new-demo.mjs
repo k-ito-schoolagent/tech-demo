@@ -26,7 +26,8 @@ for (const [from, to] of files) {
 }
 const demosPath = resolve(root, 'demos.json');
 const demos = JSON.parse(readFileSync(demosPath, 'utf8'));
-demos.push({id, page: `${id}.html`, label: label || id, category: 'カテゴリ', title: label || id, summary: '一覧に出る紹介文を1〜2文で書きます。', authors: ['@あなたのGitHubのID']});
+demos.push({id, page: `${id}.html`, label: label || id, category: 'カテゴリ', title: label || id, summary: '一覧に出る紹介文を1〜2文で書きます。', authors: ['@あなたのGitHubのID'], thumb: `thumbs/${id}.webp`});
 writeFileSync(demosPath, JSON.stringify(demos, null, 2) + '\n');
 console.log('demos.json に登録しました（title・summary・category・authors を書きかえてください）');
 console.log(`\n次は: npm run dev → http://127.0.0.1:5173/${id}.html を開き、${id}.html と src/${id}*.js を書きかえます`);
+console.log(`できあがったら /${id}.html?embed&thumb を開き「サムネイルを保存」→ public/thumbs/${id}.webp に置きます`);
