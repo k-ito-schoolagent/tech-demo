@@ -1,1 +1,21 @@
-{"name":"six-engine-lab","version":"1.0.0","type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build","preview":"vite preview --host 127.0.0.1","test":"node --test"},"dependencies":{"three":"^0.180.0","lucide":"^0.468.0"},"devDependencies":{"vite":"^7.1.0"}}
+{
+  "name": "tech-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test \"src/**/*.test.js\"",
+    "new-demo": "node scripts/new-demo.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0",
+    "lucide": "^0.468.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  },
+  "description": "機械と半導体を3Dで動かして学ぶ日本語の教材集（だれでもデモを追加できます）",
+  "license": "MIT"
+}

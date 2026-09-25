@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#141c19">
+<title>単振り子 / FORM LAB</title>
+</head>
+<body>
+<header></header>
+<main class="lab-main">
+  <section class="intro">
+    <div><div class="eyebrow">SAMPLE / CLASSICAL MECHANICS</div><h1>振れ幅を変えても、同じリズム？</h1></div>
+    <p>糸の長さと振れ幅を変えて、周期を測る。<br>「振り子の等時性」がどこまで成り立つかを確かめる。</p>
+  </section>
+  <div class="workspace">
+    <section class="viewport" aria-label="単振り子の3Dシミュレーション">
+      <div class="view-top"><span><b class="live-dot"></b>単振り子</span><span id="run-status">実時間で再生中</span></div>
+      <div id="scene"></div>
+      <div class="view-buttons">
+        <button data-view="iso" aria-label="斜めの視点"><i data-lucide="box"></i></button>
+        <button data-view="front" aria-label="正面の視点"><i data-lucide="panel-top"></i></button>
+        <button data-view="top" aria-label="真上の視点"><i data-lucide="layout-grid"></i></button>
+        <button id="reset-view" aria-label="視点をリセット"><i data-lucide="rotate-ccw"></i></button>
+      </div>
+      <div class="legend"><span style="--stage:#c9ef83">おもりの軌跡</span><span style="--stage:#84bcdc">最初の角度</span></div>
+      <div class="view-bottom">ドラッグで回転 · おもりをクリックで説明 · ＋ / − で拡大縮小</div>
+    </section>
+    <aside tabindex="0" aria-label="操作と説明">
+      <div class="section-label">条件を変える</div>
+      <div class="control-block">
+        <div class="control-title"><label for="length">糸の長さ L</label><output id="length-value">1.00 <small>m</small></output></div>
+        <input id="length" type="range" min="0.2" max="2" step="0.05" value="1">
+        <div class="range-labels"><span>0.2 m</span><span>2.0 m</span></div>
+      </div>
+      <div class="control-block">
+        <div class="control-title"><label for="amplitude">振れ幅 θ₀</label><output id="amplitude-value">20°</output></div>
+        <input id="amplitude" type="range" min="5" max="80" step="1" value="20">
+        <div class="presets"><button data-amp="10">10°</button><button data-amp="45">45°</button><button data-amp="80">80°</button></div>
+      </div>
+      <div class="readings">
+        <div><span>周期（厳密）</span><strong id="period-exact">—</strong></div>
+        <div><span>周期（小角近似）</span><strong id="period-approx">—</strong></div>
+      </div>
+      <p class="hint" id="gap"></p>
+      <div class="play-row"><button id="play" class="primary">停止</button></div>
+      <div class="divider"></div>
+      <div class="section-label">説明</div>
+      <h2 id="part-name">振り子の等時性</h2>
+      <p id="part-description" class="description">振れ幅が小さいうちは、周期は糸の長さだけで決まり、振れ幅にもおもりの重さにもよりません。振れ幅を大きくすると、周期が少しずつ長くなるのが分かります。</p>
+    </aside>
+  </div>
+  <section class="lab-note">
+    <div>
+      <h2>2つの周期の式</h2>
+      <div class="formula">小角近似：T₀ = 2π √(L / g)<br>厳密：T = 4 √(L / g) · K(sin(θ₀ / 2))</div>
+      <p>K は第1種完全楕円積分。画面の動きは運動方程式 θ'' = −(g/L) sin θ を4次のルンゲ＝クッタ法で解いています。</p>
+    </div>
+    <div>
+      <h2>モデルの前提</h2>
+      <p>糸は伸びず質量なし、おもりは質点、空気抵抗と摩擦はなし、g = 9.80665 m/s²。画面の大きさは 1 m を 4 単位で表示しています。このページは新しいデモをつくるときの見本です（<code>_template/</code> と CONTRIBUTING.md を参照）。</p>
+    </div>
+  </section>
+  <footer><span>FORM / INTERACTIVE SCIENCE LAB</span><span>見本デモ / 単振り子</span></footer>
+</main>
+<script type="module" src="/src/pendulum.js"></script>
+</body>
+</html>

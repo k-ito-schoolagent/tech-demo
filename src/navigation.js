@@ -1,6 +1,12 @@
 import './navigation-layout.css';
+import demos from '../demos.json';
+export {demos};
+// ヘッダーのナビ。demos.json の順に並ぶ（current はデモの id、一覧ページは 'home'）
 export function mountNavigation(current){
- const base=import.meta.env.BASE_URL;const header=document.querySelector('header');header.innerHTML='<a class="brand" href="'+base+'">FORM<span>INTERACTIVE<br>SCIENCE LAB</span></a><nav aria-label="シミュレーションを選択">'+[['engine','/','01','6気筒エンジン'],['cvt','/cvt.html','02','CVT'],['bjt','/bjt.html','03','BJT'],['mosfet','/mosfet.html','04','MOSFET']].map(([id,url,n,label])=>`<a href="${base}${url.slice(1)}" ${id===current?'aria-current="page"':''}><span>${n}</span>${label}</a>`).join('')+'</nav>';
+ const base=import.meta.env.BASE_URL,header=document.querySelector('header');
+ const items=[['home','','一覧','すべてのデモ'],...demos.map((d,i)=>[d.id,d.page,String(i+1).padStart(2,'0'),d.label])];
+ header.innerHTML='<a class="brand" href="'+base+'">FORM<span>INTERACTIVE<br>SCIENCE LAB</span></a><nav aria-label="シミュレーションを選択">'+items.map(([id,url,n,label])=>`<a href="${base}${url}" ${id===current?'aria-current="page"':''}><span>${n}</span>${label}</a>`).join('')+'</nav>';
+ header.querySelector('[aria-current]')?.scrollIntoView({block:'nearest',inline:'center'});
 }
 export function addCameraControls(camera,controls){
  const container=document.createElement('div');container.className='camera-extra';container.innerHTML='<button aria-label="視点を左へ回転">←</button><button aria-label="視点を右へ回転">→</button><button aria-label="拡大">＋</button><button aria-label="縮小">−</button>';

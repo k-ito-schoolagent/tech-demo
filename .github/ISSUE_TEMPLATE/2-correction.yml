@@ -1,0 +1,22 @@
+name: 説明・モデルの修正提案
+description: 説明が不正確、前提が書かれていない、式がちがう、など
+title: "[修正] "
+labels: ["説明・モデル"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: デモ
+      placeholder: 例）BJT の「回路と電流の関係」
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: どこが、どうちがうか
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 根拠（資料・計算など）

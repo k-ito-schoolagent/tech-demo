@@ -1,0 +1,39 @@
+name: 新しいデモのリクエスト・つくります宣言
+description: デモにしてほしい仕組みや、自分でつくりたいデモを知らせる
+title: "[デモ] "
+labels: ["新しいデモ"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        リクエストも、「自分でつくります」の宣言も、どちらも歓迎です。分かる所だけ書いてください。
+  - type: input
+    id: name
+    attributes:
+      label: デモにしたい仕組み
+      placeholder: 例）遊星歯車、ダイオードの整流、4ストロークのディーゼル
+    validations:
+      required: true
+  - type: textarea
+    id: learn
+    attributes:
+      label: 何が分かるようになるとよいか
+      placeholder: 例）固定する歯車を変えると、減速・増速・逆転が切りかわることを見たい
+  - type: textarea
+    id: model
+    attributes:
+      label: 使えそうな式・モデル（分かれば）
+  - type: textarea
+    id: sources
+    attributes:
+      label: 参考にする資料
+  - type: dropdown
+    id: who
+    attributes:
+      label: だれがつくりますか
+      options:
+        - 自分でつくってみます
+        - だれかにつくってほしい（リクエスト）
+        - 手伝ってくれる人と一緒につくりたい
+    validations:
+      required: true
